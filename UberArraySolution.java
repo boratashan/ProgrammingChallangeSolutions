@@ -5,6 +5,8 @@ import java.util.Random;
 Given an array of integers, return a new array such that each element at index i 
 of the new array is the product of all the numbers in the original array except 
 the one at i.
+
+Plus : What if div is not allowed and needs to implement own division algorithm?
 */
 public class UberArraySolution {
 
@@ -16,11 +18,25 @@ public class UberArraySolution {
         for (int i = 0; i < source.length; i++)
             source[i] = random.nextInt(10);
     }
-    
+
 
     private static void printLine(String line) {
         System.out.println(line);
     }
+
+    private  static int divide(int dividend, int divisor) {
+        int sign = (dividend <0) ^ (divisor < 0)? -1:1;
+        int quotient = 0;
+        dividend = Math.abs(dividend);
+        divisor = Math.abs(divisor);
+
+        while (dividend >= divisor) {
+            dividend -= divisor;
+            quotient++;
+        }
+        return quotient * sign;
+    }
+
 
     private static void doProcess() {
         int total = 1;
@@ -36,7 +52,7 @@ public class UberArraySolution {
                 int val = source[i];
                 if (val != 0) {
                     if (numberOfZeros == 0) {
-                        newArray[i] = total / val;
+                        newArray[i] = divide(total, val);
                     } else {
                         newArray[i] = 0;
                     }
