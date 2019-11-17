@@ -6,7 +6,7 @@ Given an array of integers, return a new array such that each element at index i
 of the new array is the product of all the numbers in the original array except 
 the one at i.
 
-Plus : What if div is not allowed and needs to implement own division algorithm?
+Plus : What if div is not allowed and needs to implement a division algorithm?
 */
 public class UberArraySolution {
 
