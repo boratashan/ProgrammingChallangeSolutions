@@ -1,4 +1,3 @@
-import javax.security.auth.callback.ConfirmationCallback;
 
 /**
  * This problem was asked by Google.
